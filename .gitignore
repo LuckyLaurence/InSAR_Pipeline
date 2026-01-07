@@ -1,0 +1,89 @@
+# ===========================
+# 1. Security and sensitive information (must not be sent!)
+# ===========================
+
+.env
+.netrc
+*.pem
+*.key
+secrets/
+
+# ===========================
+# 2. Python & compilation middleware
+# ===========================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===========================
+# 3. Data and large files (InSAR specific)
+# ===========================
+# Ignore everything under the data directory, but keep the directory structure (if you put .gitkeep)
+
+data/*
+!data/.gitkeep
+
+# Or more granularly ignore specific large data folders
+
+data/raw/*
+data/dem/*
+data/orbit_data/*
+data/runs/*
+data/aux/*
+
+# Ignore common intermediate large file types in ISCE/InSAR (to prevent fish from slipping through the net)
+
+*.slc
+*.int
+*.unw
+*.geo
+*.raw
+*.flat
+*.mph
+*.iso_xml
+*.vrt
+# Note: If you want to keep some XML templates, you can remove the following line, or use ! to exclude it
+
+*.xml
+*.tiff
+*.tif
+*.h5
+*.iso
+
+# ===========================
+# 4. Log and running status
+# ===========================
+
+*.log
+isce.log
+run.log
+nohup.out
+
+# ===========================
+# 5. Editor and system files
+# ===========================
+
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
